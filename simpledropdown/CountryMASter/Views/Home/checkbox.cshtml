@@ -1,0 +1,31 @@
+﻿@model CountryMASter.Models.help
+
+@{
+    ViewData["Title"] = "checkbox";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form asp-controller="Home" asp-action="checkbox" method="post" class="form-horizontal" role="form">
+    <fieldset class="form-group">
+        <h3>RadiobuttonList</h3>
+        <legend class="col-sm-3 control-label"></legend>
+        <div class="checkbox checkboxlist col-sm-9">
+            @{
+                for (int i = 0; i < Model.Countrieslist.Count(); i++)
+                {
+                    <input asp-for="Name" value="@Model.Countrieslist[i]" type="checkbox" />
+                    <label >@Model.Countrieslist[i]</label>
+                    
+                    <br />
+                }
+            }
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        <input id="Submit1" type="submit" value="submit" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
